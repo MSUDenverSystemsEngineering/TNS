@@ -73,7 +73,7 @@ Try {
 	[string]$appRevision = '01'
 	[string]$appScriptVersion = '1.0.0'
 	[string]$appScriptDate = '28/03/2020'
-	[string]$appScriptAuthor = '<author name>'
+	[string]$appScriptAuthor = 'David Torres'
 	##*===============================================
 	## Variables: Install Titles (Only set here to override defaults set by the toolkit)
 	[string]$installName = ''
@@ -121,7 +121,7 @@ Try {
 		[string]$installPhase = 'Pre-Installation'
 
 		## Show Welcome Message, close Internet Explorer if needed, verify there is enough disk space to complete the install, and persist the prompt
-		Show-InstallationWelcome -CloseApps 'iexplore' -CheckDiskSpace -PersistPrompt
+		Show-InstallationWelcome -CheckDiskSpace -PersistPrompt
 
 		## Show Progress Message (with the default message)
 		Show-InstallationProgress
@@ -142,6 +142,7 @@ Try {
 
 		## <Perform Installation tasks here>
         Remove-Item -Path "C:\ORACLE11G\product\11.2.0\client_1\Network\Admin\tnsnames.ora" 
+
         Copy-Item -Path "$dirSupportFiles\Admin\tnsnames.ora" -Destination "$envSystemDrive\ORACLE11G\product\11.2.0\client_1\Network\Admin\tnsnames.ora" -Recurse
        
 
