@@ -140,7 +140,7 @@ Try {
 			Execute-MSI @ExecuteDefaultMSISplat; If ($defaultMspFiles) { $defaultMspFiles | ForEach-Object { Execute-MSI -Action 'Patch' -Path $_ } }
 		}
 
-		## <Perform Installation tasks here>
+		## <Perform Installation tasks here> copy and paste files
         Remove-Item -Path "C:\ORACLE11G\product\11.2.0\client_1\Network\Admin\tnsnames.ora" 
 
         Copy-Item -Path "$dirSupportFiles\Admin\tnsnames.ora" -Destination "$envSystemDrive\ORACLE11G\product\11.2.0\client_1\Network\Admin\tnsnames.ora" -Recurse
