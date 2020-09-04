@@ -144,8 +144,8 @@ Try {
         ##Remove-Item -Path "C:\ORACLE11G\product\11.2.0\client_1\Network\Admin\tnsnames.ora" 
 		##Remove-Item -Path "C:\ORACLE11G_64\product\11.2.0\client_1\Network\Admin\tnsnames.ora"
 
-        Copy-Item -Path "$dirSupportFiles\Admin\" -Destination "$envSystemDrive\ORACLE11G\product\11.2.0\client_1\Network\Admin\" -Recurse -Force
-		Copy-Item -Path "$dirSupportFiles\Admin\" -Destination "$envSystemDrive\ORACLE11G_64\product\11.2.0\client_1\Network\Admin\" -Recurse -Force
+        Copy-Item -Path "$dirSupportFiles\Admin\" -Destination "$envSystemDrive\ORACLE11G\product\11.2.0\client_1\Network\" -Recurse -Force
+		Copy-Item -Path "$dirSupportFiles\Admin\" -Destination "$envSystemDrive\ORACLE11G_64\product\11.2.0\client_1\Network\" -Recurse -Force
 
 
 
