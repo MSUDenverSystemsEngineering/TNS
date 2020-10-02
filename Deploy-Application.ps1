@@ -127,7 +127,10 @@ Try {
 		Show-InstallationProgress
 
 		## <Perform Pre-Installation tasks here>
-
+		If (-not (Test-Path "C:\OracleBackup")){
+			New-Itemn -Path "C:\OracleBackup" -ItemType "directory"
+		}
+		Copy-Item -Path "$envSystemDrive\ORACLE11G\product\11.2.0\client_1\Network\Admin" -Destination "C:\OracleBackup" -Recurse -Force
 
 		##*===============================================
 		##* INSTALLATION
@@ -189,7 +192,8 @@ Try {
 		}
 
 		# <Perform Uninstallation tasks here>
-
+		Copy-Item -Path "C:\OracleBackup\Admin\" -Destination "$envSystemDrive\ORACLE11G\product\11.2.0\client_1\Network\" -Recurse -Force
+		Copy-Item -Path "C:\OracleBackup\Admin\" -Destination "$envSystemDrive\ORACLE11G_64\product\11.2.0\client_1\Network\" -Recurse -Force
 
 		##*===============================================
 		##* POST-UNINSTALLATION
