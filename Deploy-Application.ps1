@@ -128,7 +128,7 @@ Try {
 
 		## <Perform Pre-Installation tasks here>
 		If (-not (Test-Path "C:\OracleBackup")){
-			New-Itemn -Path "C:\OracleBackup" -ItemType "directory"
+			New-Item -Path "C:\OracleBackup" -ItemType "directory"
 		}
 		Copy-Item -Path "$envSystemDrive\ORACLE11G\product\11.2.0\client_1\Network\Admin" -Destination "C:\OracleBackup" -Recurse -Force
 
